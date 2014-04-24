@@ -1,2 +1,9 @@
 * Welcome!
-  A TempoDB wrapper package for composing Pandas time-series operations and data structures with TempoDB's.
+  TempoDB-pandas is a wrapper package for composing Pandas time-series
+  operations and data structures with TempoDB's.
+
+  It's really quite dead-simple to use:
+
+  #+BEGIN_SRC
+  from tempodb_pandas
+  #+END_SRC

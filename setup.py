@@ -16,7 +16,10 @@ config = {
     'version': '0.1',
     'install_requires': [
         'nose',
-        'pandas'
+        'numpy >= 1.8.1',
+        'pandas >= 0.13.1',
+        'tempodb >= 0.5.0',
+        'six'
     ],
     'packages': ['tempodb-pandas'],
     'scripts': [],
