@@ -2,19 +2,20 @@
   TempoDB-pandas is a wrapper package for composing Pandas time-series
   operations and data structures with TempoDB's.
 
+* Using It
   It's really quite dead-simple to use:
-
+  
   #+BEGIN_SRC
   from tempodb_pandas import fromTempo, flipDatumSign
+  from numpy import negative
 
   # Do a tempodb read
-  data = r.data
-  series = fromTempo(data)
+  res = client.read_key("somekey", somestart, someend, 'PT1H)
+  series = fromTempo(res.data)
   
-  # Now you can do fun stuff
-  series.resample('1H')
+  # Now you can do fun stuff with the time series
+  series.resample('1H', fill_method='pad')
 
-  # Or with convenience
-  from numpy import negative
+  # Some convenience (more coming later)
   flipDatumSign(series, '1H') == series.resample('1H', how=negative)
   #+END_SRC
