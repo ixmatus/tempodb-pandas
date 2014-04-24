@@ -21,7 +21,7 @@ config = {
         'tempodb >= 0.5.0',
         'six'
     ],
-    'packages': ['tempodb-pandas'],
+    'packages': ['tempodb_pandas'],
     'scripts': [],
     'name': 'tempodb-pandas'
 }
