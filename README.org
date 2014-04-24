@@ -5,5 +5,16 @@
   It's really quite dead-simple to use:
 
   #+BEGIN_SRC
-  from tempodb_pandas
+  from tempodb_pandas import fromTempo, flipDatumSign
+
+  # Do a tempodb read
+  data = r.data
+  series = fromTempo(data)
+  
+  # Now you can do fun stuff
+  series.resample('1H')
+
+  # Or with convenience
+  from numpy import negative
+  flipDatumSign(series, '1H') == series.resample('1H', how=negative)
   #+END_SRC
